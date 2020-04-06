@@ -100,4 +100,5 @@ deploy:
   type: ''
 
 # Enable Mathjax
-mathjax: true
+pandoc:
+  mathEngine: mathjax

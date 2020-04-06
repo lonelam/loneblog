@@ -17,9 +17,10 @@ jobs:
               run: yarn build
               id: hexog
             - name: Copy SSH keys
-              run: mkdir ~/.ssh
-              run: echo "${{ secrets.SCP_KEY }}" > ~/.ssh/id_rsa
-              run: chmod 600 ~/.ssh/id_rsa
+              run: |
+                mkdir ~/.ssh
+                echo "${{ secrets.SCP_KEY }}" > ~/.ssh/id_rsa
+                chmod 600 ~/.ssh/id_rsa
             - name: Clean remote public
               run: ssh root@laizn.com "rm -rf /www/public"
             - run: scp -r ./public/ root@laizn.com:/www/

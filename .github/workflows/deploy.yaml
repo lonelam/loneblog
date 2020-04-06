@@ -20,6 +20,8 @@ jobs:
             - name: Hexo Generation
               run: yarn build
               id: hexog
+            - name: List static files
+              run: ls -R public
             - name: Copy SSH keys
               run: |
                 mkdir ~/.ssh

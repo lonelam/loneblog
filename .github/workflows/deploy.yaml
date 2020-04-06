@@ -5,7 +5,14 @@ jobs:
     build:
         name: Hexo Generation
         runs-on: ubuntu-latest
+
+        strategy:
+            matrix:
+                node-version: 12.x
         steps:
+            - uses: actions/checkout
+            - uses: actions/setup-node
+            - run: yarn
             - name: Hexo Generation
               run: yarn build
               id: hexog

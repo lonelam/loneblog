@@ -21,6 +21,8 @@ jobs:
                 mkdir ~/.ssh
                 echo "${{ secrets.SCP_KEY }}" > ~/.ssh/id_rsa
                 chmod 600 ~/.ssh/id_rsa
-            - run: scp -r ./public/ lai@laizn.com:/www/
+            - name: Clean remote public
+              run: ssh rm -rf /www/public
+            - run: scp -r ./public/ root@laizn.com:/www/
             - name: Clean SSH keys
               run: rm -rf ~/.ssh

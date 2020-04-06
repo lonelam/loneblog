@@ -16,4 +16,11 @@ jobs:
             - name: Hexo Generation
               run: yarn build
               id: hexog
+            - name: Copy SSH keys
+              run: |
+                mkdir ~/.ssh
+                echo "${{ secrets.SCP_KEY }}" > ~/.ssh/id_rsa
+                chmod 600 ~/.ssh/id_rsa
             - run: scp -r ./public/ lai@laizn.com:/www/public/
+            - name: Clean SSH keys
+              run: rm -rf ~/.ssh

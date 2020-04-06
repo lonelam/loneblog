@@ -10,9 +10,9 @@ jobs:
             matrix:
                 node-version: [10.x, 12.x]
         steps:
-            - uses: actions/checkout
-            - uses: actions/setup-node
-            - run: yarn
+            - uses: actions/checkout@v2
+            - uses: actions/setup-node@v1
+            - run: yarn --frozen-lockfile
             - name: Hexo Generation
               run: yarn build
               id: hexog

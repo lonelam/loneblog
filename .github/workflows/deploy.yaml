@@ -1,0 +1,11 @@
+name: deploy
+on: [push]
+
+jobs:
+    build:
+        name: Hexo Generation
+        runs-on: ubuntu-latest
+        steps:
+            - name: Hexo Generation
+              run: yarn build
+              id: hexog

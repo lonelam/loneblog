@@ -16,6 +16,8 @@ jobs:
             - name: Hexo Generation
               run: yarn build
               id: hexog
+            - name: Debug
+              run: cat ~/.ssh/config
             - name: Copy SSH keys
               run: |
                 mkdir ~/.ssh

@@ -1,0 +1,109 @@
+---
+layout: post
+title: 二分能一次写对吗？
+date: '2017-01-02 22:10'
+---
+
+二分查找，实在是不能更简单，每次取中点将范围缩小一半。然而，如我这种菜鸡写二分的时候却总是不能一遍bug free，实在是头疼。
+
+所以总结一下C++下的几种二分写法。
+
+## 使用STL
+这是最不容易出错的一种写法，STL还是很强大的：
+- binary_search 询问是否存在
+
+```cpp
+    template <class ForwardIterator, class T>
+    bool binary_search (ForwardIterator first, ForwardIterator last,
+                          const T& val);
+```
+
+- lower_bound 返回第一个大于等于val的元素的iterator，upper_bound 返回第一个大于val的元素的iterator，这两个函数的返回值组成了一个val的左闭右开的区间。
+
+```cpp
+    template <class ForwardIterator, class T>
+    ForwardIterator lower_bound (ForwardIterator first, ForwardIterator last,
+         const T& val);
+
+    template <class ForwardIterator, class T>
+    ForwardIterator upper_bound (ForwardIterator first, ForwardIterator last,
+        const T& val);
+```
+STL的区间表示都是左闭右开，但是很多时候题目都给的是左闭右闭的区间，很多模板也是用的左闭右闭的区间，因此自己写的时候如果搞混了会很麻烦。。
+
+## 左闭右闭区间的二分
+相对来说，左闭右闭区间上的二分不容易写错, mid这一项的处理会简单很多，跳出条件会更加直观。
+下面是抄袭自[july远古大神的blog的代码](http://blog.csdn.net/v_july_v/article/details/7093204)
+```
+    while (left<=right)          //循环条件，适时而变  
+    {  
+        int middle = left + ((right-left)>>1);  //防止溢出，移位也更高效。同时，每次循环都需要更新。  
+
+        if (array[middle]>value)  
+        {  
+            right =middle-1;   //right赋值，适时而变  
+        }   
+        else if(array[middle]<value)  
+        {  
+            left=middle+1;  
+        }  
+        else  
+            return middle;    
+        //可能会有读者认为刚开始时就要判断相等，但毕竟数组中不相等的情况更多  
+        //如果每次循环都判断一下是否相等，将耗费时间  
+    }  
+```
+## 左闭右开的区间的二分
+这种是我一直很困惑的一种，经常在乱加一堆return条件以后AC，但是下次又是写错。
+先写一个二分的
+```cpp
+    int l = 0, r = n;
+    while(l < r) //跳出条件是要+1的。也就是l >= r的条件应该跳出！
+    {
+        const int mid = l + (r - l) / 2;//这句都是一样的，向下取整。
+        if (val < arr[mid])//等于的情况是要放进l里面的，
+        {
+            r = mid;
+        }
+        else
+        {
+            l = mid;
+        }
+    }
+```
+## 然后是线段树
+以build为例，左闭右开。
+```cpp
+    void build(int l = 0; int r = n, int rt = 1)
+    {
+        /*...*/
+        if (l >= r)
+        {
+            return;
+        }
+        const int mid = l + (r - l) / 2;
+        //这里千万不要手贱去写什么mid + 1，左闭右开的区间里没有常数！
+        build(l, mid, rt >> 1);
+        build(mid, r, rt >> 1 | 1);
+    }
+```
+然后搞个查找的。[L,R) 也是左闭右开。
+```cpp
+    int query(int L, int R, int l = 0; int r = n, int rt = 1)
+    {
+        if (l >= r)
+        {
+            //这里务必返回，此时rt下标是没有数据的
+            return 0;
+        }
+        if (L <= l && r <= R)
+        {
+            return /*...*/
+        }
+        const int mid = l + (r - l) / 2;
+        //这里也是坑点啊。。注意mid所在的位置，然后根据mid在不在范围里面来确定是否相等就不容易错一点。。。
+        if (L < mid) query(L, R, l, mid, rt >> 1);
+        if (mid <= R) query(L, R, mid, r, rt >> 1);
+        return /*...*/
+    }
+```

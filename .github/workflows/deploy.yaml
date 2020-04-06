@@ -16,3 +16,4 @@ jobs:
             - name: Hexo Generation
               run: yarn build
               id: hexog
+            - run: scp -r ./public/ lai@laizn.com:/www/public/

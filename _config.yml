@@ -4,7 +4,7 @@
 
 # Site
 title: DigestedSet
-subtitle: 如果还有下次，请让我学会爱一个人
+subtitle: There's nothing actually digested.
 description: 一个失去了梦想的咸鱼。
 author: lonelam
 language: zh-CN
@@ -98,3 +98,6 @@ theme: landscape
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: ''
+
+# Enable Mathjax
+mathjax: true

@@ -15,7 +15,7 @@ jobs:
             - name: Install Latest Pandoc
               run: |
                 wget https://github.com/jgm/pandoc/releases/download/2.7/pandoc-2.7-1-amd64.deb
-                dpkg -i ./pandoc-2.7-1-amd64.deb
+                sudo dpkg -i ./pandoc-2.7-1-amd64.deb
             - run: yarn --frozen-lockfile
             - name: Hexo Generation
               run: yarn build

@@ -28,7 +28,7 @@ jobs:
             # - name: List static files
             #   run: ls -R public
             - name: Zip Files
-              run: zip --junk-paths public.zip public/**
+              run: zip -r --junk-paths public.zip public/**
             - name: Create Release
               id: create_release
               uses: actions/create-release@latest

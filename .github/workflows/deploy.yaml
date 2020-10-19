@@ -59,7 +59,7 @@ jobs:
                 echo "${{ secrets.SCP_KEY }}" > ~/.ssh/id_rsa
                 chmod 600 ~/.ssh/id_rsa
             - name: Clean remote public
-              run: ssh -o StrictHostKeyChecking=no root@laizn.com "rm -rf /www/public"
+              run: ssh -o StrictHostKeyChecking=no www@laizn.com "rm -rf /www/public"
             - run: scp -o StrictHostKeyChecking=no -r ./public/ root@laizn.com:/www/
             - name: Clean SSH keys
               run: rm -rf ~/.ssh

@@ -60,6 +60,6 @@ jobs:
                 chmod 600 ~/.ssh/id_rsa
             - name: Clean remote public
               run: ssh -o StrictHostKeyChecking=no -p ${{ secrets.PORT }}  www@laizn.com "rm -rf /www/public"
-            - run: scp -o StrictHostKeyChecking=no -p ${{ secrets.PORT }} -r ./public/ www@laizn.com:/www/
+            - run: scp -o StrictHostKeyChecking=no -P ${{ secrets.PORT }} -r ./public/ www@laizn.com:/www/
             - name: Clean SSH keys
               run: rm -rf ~/.ssh

@@ -11,6 +11,7 @@ tags: [frontend, css, note]
 <!-- more -->
 
 # 进度
+实际上截至2021年1月21日仍然处于崩溃状态，果然我是废了。
 ## react
   - [x] [INSTALLATION](https://reactjs.org/docs/getting-started.html)
     - [x] Getting Started
@@ -31,10 +32,10 @@ tags: [frontend, css, note]
     - [x] Thinking In React
 
 ## web fundamentals
-  - [ ] CSS layout
+  - [x] CSS layout
     - [x] [basics](https://wiki.developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Introduction)
     - [x] [normal flow](https://wiki.developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Normal_Flow)
-    - [ ] [flexbox](https://wiki.developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox)
+    - [x] [flexbox](https://wiki.developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox)
 
   - [ ] Javascript高级程序设计
   - [ ] Javascript权威指南

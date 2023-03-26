@@ -42,6 +42,7 @@ IPTV_R_VID_4033
 第一步先给wifi配置密码
 # 将overlay分区改到U盘
 直接参考OpenWrt官方的文档[ExtRoot Configureation](https://openwrt.org/docs/guide-user/additional-software/extroot_configuration)执行命令，可以完美扩展/overlay分区到64G的U盘上面，彻底解决空间不够用的问题。
+
 # 关于ipv6配置
 NAS等服务需要获取独立ipv6地址，并开放端口到公网。其中ipv6的网段是动态分配给NAS等主机的，前缀可能会发生变化，因此需要以ipv6网段的形式来配置Openwrt firewall的规则：具体在ip destination处填写`::a1b2:c3d4:0/::ffff:ffff:0`即可，这里找了好久也没找到中文资料，简单描述一下规则：
 >`/`前面的是ipv6地址，`/`后的是掩码。ipv6地址一共128位，分为8组16位的16进制表示，`:`分隔的字符。其中，双`:`是一种简写，表示该位置所有位都是0，一般只出现一次。掩码也是一样的表示方式。

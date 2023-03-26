@@ -1,3 +1,8 @@
-# published
+# Published
+https://laizn.com
 
-http://laizn.com
+# Build
+`pn run build`
+
+# Deploy
+`./deploy.zsh`

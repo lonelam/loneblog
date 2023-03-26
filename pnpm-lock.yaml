@@ -3,7 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   bulma-stylus: 0.8.0
   hexo: ^6.3.0
-  hexo-component-inferno: ^2.0.2
+  hexo-component-inferno: ^2.0.3
   hexo-generator-archive: ^2.0.0
   hexo-generator-category: ^1.0.0
   hexo-generator-index: ^3.0.0
@@ -16,8 +16,8 @@ specifiers:
   hexo-renderer-pug: ^3.0.0
   hexo-renderer-stylus: ^2.1.0
   hexo-server: ^1.0.0
-  inferno: ^7.3.3
-  inferno-create-element: ^7.3.3
+  inferno: ^7.4.11
+  inferno-create-element: ^7.4.11
 
 dependencies:
   bulma-stylus: 0.8.0

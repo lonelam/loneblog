@@ -1,7 +1,7 @@
 const Hexo = require("hexo");
 const markedKatex = require("marked-katex-extension");
 async function main() {
-  const hexo = new Hexo(process.cwd(), { debug: true });
+  const hexo = new Hexo(process.cwd(), {});
   hexo.extend.filter.register("marked:extensions", function (extensions) {
     extensions.push(markedKatex({}));
   });

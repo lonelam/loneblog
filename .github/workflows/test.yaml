@@ -2,26 +2,26 @@ name: test
 on: [push]
 
 jobs:
-    build:
-        name: Hexo Generation
-        runs-on: ubuntu-latest
+  build:
+    name: Hexo Generation
+    runs-on: ubuntu-latest
 
-        strategy:
-            matrix:
-                node-version: [12.x]
-        steps:
-            - uses: actions/checkout@v2
-            - uses: actions/setup-node@v1
-            - run: git submodule update --init --recursive
-            - name: Install Latest Pandoc
-              run: |
-                wget https://github.com/jgm/pandoc/releases/download/2.9.2.1/pandoc-2.9.2.1-1-amd64.deb
-                sudo dpkg -i ./pandoc-2.9.2.1-1-amd64.deb
-            - run: yarn --frozen-lockfile
-            - name: Hexo Generation
-              run: yarn build
-              id: hexog
-            # - name: List static files
-            #   run: ls -R public
-            - name: Zip Files
-              run: zip --junk-paths public readme.md
+    strategy:
+      matrix:
+        node-version: [18.x]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+      - run: git submodule update --init --recursive
+      - name: Install Latest Pandoc
+        run: |
+          wget https://github.com/jgm/pandoc/releases/download/2.9.2.1/pandoc-2.9.2.1-1-amd64.deb
+          sudo dpkg -i ./pandoc-2.9.2.1-1-amd64.deb
+      - run: yarn --frozen-lockfile
+      - name: Hexo Generation
+        run: yarn build
+        id: hexog
+      # - name: List static files
+      #   run: ls -R public
+      - name: Zip Files
+        run: zip --junk-paths public readme.md

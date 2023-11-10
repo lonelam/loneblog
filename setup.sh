@@ -1,4 +1,5 @@
 #!/bin/bash
+set -xe
 
 # Update system packages
 sudo apt update

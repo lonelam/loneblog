@@ -5,6 +5,7 @@ async function main() {
   hexo.extend.filter.register("marked:extensions", function (extensions) {
     const addedExtentions = markedKatex({
       throwOnError: false,
+      displayMode: true,
     });
     extensions.push(...addedExtentions.extensions);
   });

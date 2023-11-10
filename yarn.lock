@@ -31,6 +31,11 @@
   resolved "https://registry.yarnpkg.com/@tootallnate/once/-/once-2.0.0.tgz#f544a148d3ab35801c1f633a7441fd87c2e484bf"
   integrity sha512-XCuKFP5PS55gnMVu3dty8KPatLqUoy/ZYzDzAGCQ8JNFCkLXzmI7vNHCR+XpbZaMWQK/vQubr7PkYq8g470J/A==
 
+"@types/katex@^0.16.5":
+  version "0.16.6"
+  resolved "https://registry.yarnpkg.com/@types/katex/-/katex-0.16.6.tgz#6dd82f78a1a1d2eceeff6bb97ba98d7c062454cb"
+  integrity sha512-rZYO1HInM99rAFYNwGqbYPxHZHxu2IwZYKj4bJ4oh6edVrm1UId8mmbHIZLBtG253qU6y3piag0XYe/joNnwzQ==
+
 a-sync-waterfall@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/a-sync-waterfall/-/a-sync-waterfall-1.0.1.tgz#75b6b6aa72598b497a125e7a2770f14f4c8a1fa7"
@@ -270,6 +275,11 @@ commander@^5.1.0:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-5.1.0.tgz#46abbd1652f8e059bddaef99bbdcb2ad9cf179ae"
   integrity sha512-P0CysNDQ7rtVw4QIQtm+MRxV66vKFSvlsQvGYXZWR3qFU0jlMKHZZZgw8e+8DSah4UDKMqnknRDQz+xuQXQ/Zg==
+
+commander@^8.3.0:
+  version "8.3.0"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-8.3.0.tgz#4837ea1b2da67b9c616a67afbb0fafee567bca66"
+  integrity sha512-OkTL9umf+He2DZkUq8f8J9of7yL6RJKI24dVITBmNfZBmri9zYZQrKkuXiKhyfPSu8tUhnVBB1iKXevvnlR4Ww==
 
 compressible@~2.0.16:
   version "2.0.18"
@@ -796,11 +806,6 @@ hexo-renderer-marked@^6.0.0:
     jsdom "^20.0.1"
     marked "^4.3.0"
 
-hexo-renderer-pandoc@^0.3.1:
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/hexo-renderer-pandoc/-/hexo-renderer-pandoc-0.3.1.tgz#62d0ec7bed307bfdd626f36914e7f9d93d0cdf58"
-  integrity sha512-ZTUzLkJHFA6OCzk37xR9PWYydLwuv4qV7iJMe5p88gxiIo3d1M/dOwsIXEra/olcA/y9UKw57qASCby1NseNsw==
-
 hexo-renderer-pug@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/hexo-renderer-pug/-/hexo-renderer-pug-3.0.0.tgz#4ca631cd0ecccefc43b70ac44230d5008956adc2"
@@ -1120,12 +1125,27 @@ jstransformer@1.0.0:
     is-promise "^2.0.0"
     promise "^7.0.1"
 
+katex@^0.16.9:
+  version "0.16.9"
+  resolved "https://registry.yarnpkg.com/katex/-/katex-0.16.9.tgz#bc62d8f7abfea6e181250f85a56e4ef292dcb1fa"
+  integrity sha512-fsSYjWS0EEOwvy81j3vRA8TEAhQhKiqO+FQaKWp0m39qwOzHVBgAUBIXWj1pB+O2W3fIpNa6Y9KSKCVbfPhyAQ==
+  dependencies:
+    commander "^8.3.0"
+
 lower-case@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/lower-case/-/lower-case-2.0.2.tgz#6fa237c63dbdc4a82ca0fd882e4722dc5e634e28"
   integrity sha512-7fm3l3NAF9WfN6W3JOmf5drwpVqX78JtoGJ3A6W0a6ZnldM41w2fV5D490psKFTpMds8TJse/eHLFFsNHHjHgg==
   dependencies:
     tslib "^2.0.3"
+
+marked-katex-extension@^4.0.3:
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/marked-katex-extension/-/marked-katex-extension-4.0.3.tgz#539fd3a8aa49e123e4e20f3d9174aad525dc68f8"
+  integrity sha512-MnuYbTbz3BQLEvXe89X5xTA1tTPYfa+x8xoDorzk5FmMXmK0W0epMy6pfb9AemXTVGeneR1WF0DOHvOUtK8G3A==
+  dependencies:
+    "@types/katex" "^0.16.5"
+    katex "^0.16.9"
 
 marked@^4.3.0:
   version "4.3.0"

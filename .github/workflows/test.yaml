@@ -13,10 +13,10 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v3
       - run: git submodule update --init --recursive
-      - name: Install Latest Pandoc
-        run: |
-          wget https://github.com/jgm/pandoc/releases/download/2.9.2.1/pandoc-2.9.2.1-1-amd64.deb
-          sudo dpkg -i ./pandoc-2.9.2.1-1-amd64.deb
+      # - name: Install Latest Pandoc
+      #   run: |
+      #     wget https://github.com/jgm/pandoc/releases/download/2.9.2.1/pandoc-2.9.2.1-1-amd64.deb
+      #     sudo dpkg -i ./pandoc-2.9.2.1-1-amd64.deb
       - run: yarn --frozen-lockfile
       - name: Hexo Generation
         run: yarn build

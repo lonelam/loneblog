@@ -67,3 +67,35 @@ fn main() {
     println!("rect1 is {:?}", rect1);
 }
 ```
+
+实现方法的办法有点像 go，语法有点像 python，this 指针用的是&self
+
+```rust
+impl Rectangle {
+    fn area(&self) -> u32 {
+        self.width * self.height
+    }
+}
+
+impl Rectangle {
+    fn can_hold(&self, other: &Rectangle) -> bool {
+        self.width > other.width && self.height > other.height
+    }
+}
+
+```
+
+另外还有类似于 C++的静态方法的 associated functions
+
+```rust
+
+impl Rectangle {
+    fn square(size: u32) -> Self {
+        Self {
+            width: size,
+            height: size,
+        }
+    }
+}
+
+```

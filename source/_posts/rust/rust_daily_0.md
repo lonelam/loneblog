@@ -49,7 +49,7 @@ fn main() {
 }
 ```
 
-另外变量也可以被覆盖，覆盖了以后变量会是一个不同的地址：
+另外变量也可以被覆盖，覆盖了以后变量会是一个不同的地址，因此尽管 rust 中常有覆盖的操作，但真正使用时可能需要注意一下实际用了什么时候分配的内存：
 
 ```rust
 
@@ -58,6 +58,13 @@ fn main() {
     println!("the first x location is {:p}", &x);
     let x = 5;
     println!("the second x location is {:p}", &x);
+    for i in 0..10 {
+        if x != 5 {
+            // 永远不会输出, 因为 x 的值不会被改变
+            println!("the x value is {} and not equal to 5", x);
+        }
+        let x = i;
+    }
 }
 
 ```

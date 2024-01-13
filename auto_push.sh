@@ -9,6 +9,10 @@ git add .
 # Commit changes with the current date and time
 git commit -m "Auto daily commit on $current_date_time"
 
+# Just push immediately
+
+git push
+
 # Get the latest tag and increment it
 latest_tag=$(git describe --tags `git rev-list --tags --max-count=1`)
 IFS='.' read -ra ADDR <<< "$latest_tag"

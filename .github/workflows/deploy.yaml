@@ -1,4 +1,8 @@
 name: deploy
+
+concurrency:
+  group: deploy-workflow-${{ github.ref }}
+
 on:
   push:
     tags:

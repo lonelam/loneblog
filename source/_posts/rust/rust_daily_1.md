@@ -1,6 +1,6 @@
 ---
 title: 一天学一个rust语法[1] ownership
-date: 2024-01-13
+date: 2024-01-13 01:00:00
 tags: [rust, beginner]
 ---
 

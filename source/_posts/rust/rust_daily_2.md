@@ -1,6 +1,6 @@
 ---
 title: 一天学一个rust语法[2] slices
-date: 2024-01-13
+date: 2024-01-13 02:00:00
 tags: [rust, beginner]
 ---
 

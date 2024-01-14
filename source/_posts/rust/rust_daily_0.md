@@ -94,6 +94,7 @@ fn main() {
 # 3.3. Functions
 
 返回值的类型在签名最后面，最后一个 expression 表示返回值。
+注意这里有一个特殊的点是 expression 是没有分号;的，加分号会把 expression 变成 statement，而函数的返回值必须是 expression
 
 ```rust
 fn main() {
@@ -103,7 +104,7 @@ fn main() {
 }
 
 fn plus_one(x: i32) -> i32 {
-    x + 1;
+    x + 1
 }
 
 ```

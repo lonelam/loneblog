@@ -1,5 +1,5 @@
 ---
-title: 一天学一个rust语法[4] enum与option
+title: 一天学一个rust语法[4] enum与Option
 date: 2024-01-14 19:00:00
 tags: [rust, beginner]
 ---
@@ -59,3 +59,5 @@ enum Option<T> {
 
     let sum = x + y;
 ```
+
+值得注意的是，Option 提供了一批看起来像是面试题的方法，让你可以以简单的方式改变 Option 的类型，参见[这里](https://doc.rust-lang.org/std/option/enum.Option.html)。

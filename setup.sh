@@ -48,7 +48,7 @@ fi
 
 # Setup Certbot for automatic SSL certificate generation and renewal
 # Replace 'your_domain.com' with your actual domain name
-sudo certbot --nginx -d laizn.com
+sudo certbot --nginx -d laizn.cc
 
 # Restart Nginx to apply SSL changes
 sudo systemctl restart nginx

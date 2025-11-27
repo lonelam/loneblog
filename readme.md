@@ -1,6 +1,6 @@
 # Published
 
-https://laizn.com
+https://laizn.cc
 
 # Build
 
